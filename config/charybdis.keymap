@@ -13,8 +13,14 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/input_transform.h>
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 15
+#ifdef ZMK_POINTING_DEFAULT_MOVE_VAL
+    #undef ZMK_POINTING_DEFAULT_MOVE_VAL
+    #define ZMK_POINTING_DEFAULT_MOVE_VAL 1200
+#endif
+#ifdef ZMK_POINTING_DEFAULT_SCRL_VAL
+    #undef ZMK_POINTING_DEFAULT_SCRL_VAL
+    #define ZMK_POINTING_DEFAULT_SCRL_VAL 15
+#endif
 
 #define BASE 0
 #define NAVI 1
@@ -145,7 +151,7 @@
             bindings = <
     &kp Q           &kp W           &kp F           &kp P           &kp B           &kp J           &kp L           &kp U           &kp Y           &kp SQT
     &hml LGUI A     &hml LALT R     &hml LCTL S     &hml LSHIFT T   &kp G           &kp M           &hmr RSHIFT N   &hmr RCTRL E    &hmr RALT I     &hmr RGUI O
-    &lt SCRL Z      &kp X           &kp C           &lt MOUS D      &kp V           &kp K           &lt MOUS H      &csemi          &dcoln          &lt SCRL FSLH
+    &lt SCRL Z      &kp X           &kp C           &lt MOUS D      &kp V           &kp K           &lt MOUS H      &mm_csemi       &mm_dcoln       &lt SCRL FSLH
                                     &kp BSPC        &skq LSHIFT     &num_fun        &lt NAVI ENTER  &kp SPACE
             >;
         };
