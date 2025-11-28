@@ -62,6 +62,10 @@
         };
     };
 
+    chosen {
+        zmk,matrix_transform = &five_column_transform;
+    };
+
     behaviors {
         skq: sticky_key_quick_release {
             compatible = "zmk,behavior-sticky-key";
@@ -139,10 +143,6 @@
             if-layers = <NAVI NUMB>;
             then-layer = <SYST>;
         };
-    };
-
-    chosen {
-        zmk,matrix_transform = &five_column_transform;
     };
 
     keymap {

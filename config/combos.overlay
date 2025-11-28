@@ -6,6 +6,8 @@
   ╰───────╮ 30  31  32 │ │ 33  34 ╭───────────╯
           ╰────────────╯ ╰────────╯            */
 
+compatible = "zmk,combos";
+
 #define COMBO(NAME, BINDINGS, KEYPOS, TIMEOUT, LAYERS) \
   combo_##NAME { \
     bindings = <BINDINGS>; \
